@@ -1,0 +1,43 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yopapa699/KavoUI/main/KavoUiLib"))()
+
+local Window = Library.CreateLib("PLAYER HUB", "BloodTheme")
+
+local Tab = Window:NewTab("Player")
+
+local Section = Tab:NewSection("Ability")
+
+Section:NewSlider("Walkspeed", "Changes how fast you walk.", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue) 
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s 
+
+end)
+
+Section:NewSlider("JumpPower", "Changes how fast you jump.", 250, 16, function(s) -- 500 (MaxValue) | 0 (MinValue) 
+
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = s 
+
+end)
+
+Section:NewToggle("Fov", "Changes The Fov", function(state)
+
+    if state then
+
+        game.Workspace.CurrentCamera.FieldOfView = 120
+
+    else
+
+        game.Workspace.CurrentCamera.FieldOfView = 80
+
+    end
+
+end)
+
+Section:NewButton("Shift lock", "Perfect for mobiles", function()
+
+loadstring(game:HttpGet(('https://pastebin.com/raw/4BZuyqvc'),true))()
+
+    print("Clicked")
+
+end)
+
+Section:NewLabel("Made By Milvan")
